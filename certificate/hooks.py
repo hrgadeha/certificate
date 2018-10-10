@@ -90,23 +90,15 @@ app_license = "MIT"
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-# 	"all": [
-# 		"certificate.tasks.all"
-# 	],
-# 	"daily": [
-# 		"certificate.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"certificate.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"certificate.tasks.weekly"
-# 	]
-# 	"monthly": [
-# 		"certificate.tasks.monthly"
-# 	]
-# }
+scheduler_events = {
+    "cron": {
+        "0 0 * * *": [
+            "certificate.certificate.doctype.certificate.certificate.emp_cert_mail",
+	    "certificate.certificate.doctype.certificate.certificate.company_cert_mail"
+        ]
+    }
+
+}
 
 # Testing
 # -------
